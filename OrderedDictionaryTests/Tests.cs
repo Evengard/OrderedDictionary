@@ -277,8 +277,8 @@ namespace OrderedDictionaryTests
         {
             var dictionary = TestData.ToOrderedDictionary(x => x.Item1, x => x.Item2);
 
-            List<string> keys = dictionary.Keys.ToList();
-            List<string> values = dictionary.Values.ToList();
+            IList<string> keys = dictionary.Keys;
+            IList<string> values = dictionary.Values;
             for (int i = 0; i < TestData.Count; i++)
             {
                 Assert.AreEqual(TestData[i].Item1, keys[i]);
